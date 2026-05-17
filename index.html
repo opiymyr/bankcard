@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Банковская карта</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="dashboard">
+    <div class="creator-section">
+        <div class="form-card">
+            <div class="form-header">
+                <h3>Добавить карту</h3>
+            </div>
+            <form id="cardForm">
+                <div class="input-group">
+                    <label>Банк</label>
+                    <input type="text" id="bankName" placeholder="Например: Тинькофф, Сбер, Альфа" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>Платежная система</label>
+                    <select id="paymentSys">
+                        <option value="" disabled selected>— Выберите систему —</option>
+                        <option value="Visa">Visa</option>
+                        <option value="MasterCard">MasterCard</option>
+                        <option value="МИР">МИР</option>
+                        <option value="Amex">American Express</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Номер карты (16 цифр)</label>
+                    <input type="text" id="cardNum" maxlength="19" placeholder="0000 0000 0000 0000" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>Имя держателя</label>
+                    <input type="text" id="cardHolder" placeholder="DENIS SMITH" autocomplete="off" style="text-transform: uppercase;">
+                </div>
+                <div class="input-group">
+                    <label>Срок действия</label>
+                    <input type="month" id="expiryDate">
+                </div>
+                <button type="submit" class="form-btn">Добавить карту</button>
+            </form>
+        </div>
+        <div class="card-preview">
+            <div class="preview-top">
+                <img id="bankPreviewLogo" class="bank-logo-area" width="80" height="40" style="object-fit: contain;">
+                <img id="paymentPreviewIcon" class="payment-icon" width="50" height="30" style="object-fit: contain;">
+            </div>
+            <div class="card-number-area" id="cardNumberPreview">•••• •••• •••• ••••</div>
+            <div class="card-details-bottom">
+                <div class="holder-preview" id="holderPreview">HOLDER NAME</div>
+                <div class="date-preview" id="datePreview">MM/YY</div>
+            </div>
+        </div>
+    </div>
+    <div class="section-title">
+        <span>Добавленные карты</span>
+    </div>
+    <div class="cards-table-wrapper">
+        <table class="cards-table">
+            <thead>
+                <tr><th>Банк</th><th>Система</th><th>Номер карты</th><th>Держатель</th><th>Срок</th><th></th></tr>
+            </thead>
+            <tbody id="cardsTableBody">
+                <tr class="empty-row"><td colspan="6">Нет добавленных карт. Заполните форму выше.</td></tr>
+            </tbody>
+        </table>
+
+<script src="script.js"></script>
+
+</body>
+</html>
